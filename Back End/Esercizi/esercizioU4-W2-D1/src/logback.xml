@@ -1,0 +1,36 @@
+<configuration>
+
+    <!--appender del logger personalizzato, cosi gli errori verano salvati usl file myApp.log, in più cambiando destinazione con ./../ il file non verrà creato direttamente nell'app ma nella cartella prima in modo da essere sempre accessibile!-->
+    <appender name="STDOUT" class="ch.qos.logback.core.FileAppender">
+        <file>myApp.log</file>
+        <!--encoder serve a personalizzare il messaggio che verrà scritto-->
+        <encoder>
+            <pattern>%date %level [%thread] %logger{10} [%file:%line] -%kvp- %msg%n</pattern>
+        </encoder>
+        <append>true</append>
+    </appender>
+
+
+    <!--logger personalizzato che ha lo stesso nome del'istanza di logger in classeProva, additivity=false per non far scrivere anche le info del logger ROOT sotto, altrimenti apparirebbero tutti e due-->
+    <logger name="loggerProva1" level="warn" additivity="false">
+        <appender-ref ref="STDOUT"/>
+    </logger>
+
+
+
+    <!--appender base di root infatti ha lo stesso name che si trova in ROOT (name="STDOUT")-->
+    <appender name="STDOUT"
+              class="ch.qos.logback.core.ConsoleAppender"> <!-- encoders are assigned the type ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} -%kvp- %msg%n</pattern>
+        </encoder>
+    </appender>
+
+
+
+    <!--logger ROOT predefinito di base se non viene creato un logger personalizzato-->
+    <root level="debug">
+        <appender-ref ref="STDOUT"/>
+    </root>
+
+</configuration>

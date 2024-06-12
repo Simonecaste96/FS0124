@@ -1,0 +1,78 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+}
+.contenitore{
+    display: flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#tombolone {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border: solid 1px;
+    width: 650px;
+    margin-top: 20px;
+    border-radius:10px ;
+    
+}
+
+#tombolone div {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    font-size: 20px;
+    border-radius: 30px;
+}
+
+#lastNumber{
+    width: 400px;
+    height: 200px;
+    border: 1px solid #333;
+    margin-left: 30px;
+    margin-top: 20px;
+    border-radius: 30px;
+    background-color: green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+}
+h3{
+    text-align: center;
+}
+
+.scatolaBtn{
+display: flex;
+justify-content: center;
+}
+button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #555;
+}

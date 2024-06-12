@@ -1,0 +1,7 @@
+img{
+    width: 25vh;
+}
+
+fieldset,input, button{
+    border-radius: 5px;
+}

@@ -1,0 +1,95 @@
+<div class="container">
+    <h1>{{title}}</h1>
+  <div class="row">
+    <div class="col-12">
+      <form #form="ngForm" (ngSubmit)="submit()">
+        <div ngModelGroup="userInfo" id="userInfo" #userGroup="ngModelGroup">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name"  [(ngModel)]="user.name" name="name" class="form-control" required #name="ngModel"  />
+            <p *ngIf="name.invalid && name.touched">
+                <strong class="text-danger">Questo campo è obbligatorio</strong>
+            </p>
+          </div>
+
+
+
+          <div class="form-group">
+            <label for="surname">Surname</label>
+            <input type="text" id="surname"  [(ngModel)]="user.surname" name="surname" class="form-control" required #surname="ngModel"  />
+            <p *ngIf="surname.invalid && surname.touched">
+                <strong class="text-danger">Questo campo è obbligatorio</strong>
+            </p>
+          </div>
+
+
+
+    
+          <div class="form-group">
+            <label for="userImg">Immagine profilo</label>
+            <input type="file" id="userImg"  [(ngModel)]="user.userImg" name="userImg" class="form-control" required #userImg="ngModel"  />
+            <p *ngIf="userImg.invalid && userImg.touched">
+                <strong class="text-danger">Questo campo è obbligatorio</strong>
+            </p>
+          </div>
+
+
+
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username"  [(ngModel)]="user.username" name="username" class="form-control" required #username="ngModel"  />
+            <p *ngIf="username.invalid && username.touched">
+                <strong class="text-danger">Questo campo è obbligatorio</strong>
+            </p>
+          </div>
+
+
+
+          <div class="form-group">
+            <label for="bio">Bio</label>
+            <input type="text" id="bio"  [(ngModel)]="user.bio" name="bio" class="form-control" required #bio="ngModel"  />
+          </div>
+
+
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" id="email"  [(ngModel)]="user.email" name="email" class="form-control" required #email="ngModel"  />
+            <p *ngIf="email.invalid && email.touched">
+                <strong class="text-danger">Questo campo è obbligatorio</strong>
+            </p>
+          </div>
+
+
+
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password"  [(ngModel)]="user.password" name="password" class="form-control" required #password="ngModel"  />
+            <p *ngIf="password.invalid && password.touched">
+                <strong class="text-danger">Questo campo è obbligatorio</strong>
+            </p>
+          </div>
+
+
+
+
+           <div class="form-group">
+            <label for="passwordCheck">Conferma password</label>
+            <input type="password" id="passwordCheck"  [(ngModel)]="user.passwordCheck" name="passwordCheck" class="form-control" required #passwordCheck="ngModel"  />
+            <p *ngIf="passwordCheck.invalid && passwordCheck.touched">
+           <strong class="text-danger">Questo campo è obbligatorio</strong> 
+            </p>    
+                <p *ngIf="passwordCheck.value!= password.value" >
+                    <strong class="text-danger">Le password non coincidono!</strong></p>
+                
+            
+          </div>
+          <button type="submit" class="btn btn-primary mt-3" [disabled]="form.invalid">Invia</button>
+
+
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+2024-04-22 12:58:24,451 WARN [main] loggerProva1 [ClasseProva.java:9] -- Sto lanciando l'applicazione
+2024-04-22 12:58:24,455 WARN [main] loggerProva1 [ClasseProva.java:11] -- Applicazione terminata
+2024-04-22 17:04:08,686 WARN [main] loggerProva1 [Esercizio2.java:11] -- Sto lanciando l'applicazione
+2024-04-22 17:11:01,607 WARN [main] loggerProva1 [Esercizio2.java:11] -- Sto lanciando l'applicazione
+2024-04-22 17:11:29,652 WARN [main] loggerProva1 [Esercizio2.java:11] -- Sto lanciando l'applicazione
+2024-04-22 17:12:16,229 WARN [main] loggerProva1 [Esercizio2.java:11] -- Sto lanciando l'applicazione
+2024-04-22 17:12:18,940 WARN [main] loggerProva1 [Esercizio2.java:32] -- Sto terminando l'applicazione
+2024-04-22 17:13:33,536 WARN [main] loggerProva1 [Esercizio2.java:11] -- Sto lanciando l'applicazione
+2024-04-22 17:13:39,590 WARN [main] loggerProva1 [Esercizio2.java:32] -- Sto terminando l'applicazione

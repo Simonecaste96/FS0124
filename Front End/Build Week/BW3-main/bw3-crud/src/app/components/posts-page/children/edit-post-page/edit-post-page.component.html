@@ -1,0 +1,29 @@
+<div class="row justify-content-center">
+  <div class="col-6">
+    <form [formGroup]="editPostForm" (ngSubmit)="onSubmit()" class="mt-4">
+      <div class="mb-3">
+        <label for="title" class="form-label text-white">Titolo Post</label>
+        <input
+          type="text"
+          class="form-control"
+          id="title"
+          formControlName="postTitle"
+          [value]="currentPost.title"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="body" class="form-label text-white">Body Post</label>
+        <textarea
+          class="form-control"
+          id="body"
+          rows="3"
+          formControlName="postBody"
+          [value]="currentPost.body"
+          >{{ currentPost.body }}</textarea
+        >
+      </div>
+      <button type="submit" class="btn btn-success editBtn my-1">Modifica post</button>
+      <div class="btn btn-primary deleteBtn my-1" (click)="deletePost(id)">Elimina</div>
+    </form>
+  </div>
+</div>

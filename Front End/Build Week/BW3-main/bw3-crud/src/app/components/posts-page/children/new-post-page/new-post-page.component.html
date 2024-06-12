@@ -1,0 +1,33 @@
+<div class="row justify-content-center">
+  <div class="col-6">
+    <form [formGroup]="newPostForm" (ngSubmit)="onSubmit()" class="mt-4">
+      <div class="mb-3">
+        <label for="title" class="form-label text-white">Titolo Post</label>
+        <input
+          type="text"
+          class="form-control"
+          id="title"
+          formControlName="postTitle"
+          placeholder="Titolo"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="body" class="form-label text-white">Body Post</label>
+        <textarea
+          class="form-control"
+          id="body"
+          rows="3"
+          formControlName="postBody"
+          placeholder="Scrivi i tuoi pensieri!"
+        ></textarea>
+      </div>
+      <button
+        type="submit"
+        class="btn btn-primary text-white"
+        [disabled]="!newPostForm.valid"
+      >
+        Crea nuovo post
+      </button>
+    </form>
+  </div>
+</div>

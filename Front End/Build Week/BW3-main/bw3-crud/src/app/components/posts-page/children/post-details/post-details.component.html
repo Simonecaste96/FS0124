@@ -1,0 +1,13 @@
+<div class="row p-4">
+  <div class="card bg-gradient text-dark">
+    <div class="card-body">
+      <h5 class="card-title">{{ post.title }}</h5>
+      <p class="card-text">{{ post.body }}</p>
+      <a
+        [routerLink]="['/posts/edit/', post.id]"
+        class="btn btn-success"
+        >Modifica Post</a
+      >
+    </div>
+  </div>
+</div>

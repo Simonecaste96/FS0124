@@ -1,0 +1,30 @@
+<div class="container mt-5">
+  <div class="row">
+    <div
+      *ngIf="!authSrv.isAuthenticated()"
+      class="col-md-6 offset-md-3 text-center"
+    >
+    <img class="rounded-circle" style="width: 200px;" src="../../../assets/img/Post.com.png"/>
+      <p class="text-white fw-bold my-2">
+        Benvenuto alla nostra piattaforma. Per continuare, effettua il login o
+        registrati.
+      </p>
+      <div class="d-flex justify-content-center aria-label="Accesso>
+        <a routerLink="/signup" class="btn btn-primary mx-1 w-25  d-flex justify-content-center align-items-center regBtn text-white">Registrati</a>
+        
+        <a routerLink="/login" class="btn btn-succes mx-1 w-25 d-flex justify-content-center align-items-center logBtn text-white">Accedi</a>
+      </div>
+    </div>
+
+    <div
+      *ngIf="authSrv.isAuthenticated()"
+      class="col-md-6 offset-md-3 text-center"
+    >
+      <h1 class="text-white">Bentornato!</h1>
+      <p class="text-white" >Riprendi da dove avevi lasciato</p>
+      <div class="btn-group mt-3" role="group" aria-label="Accesso">
+        <a routerLink="/signup" class="btn btn-primary regBtn">Home</a>
+      </div>
+    </div>
+  </div>
+</div>

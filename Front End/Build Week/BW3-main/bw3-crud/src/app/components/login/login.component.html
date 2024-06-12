@@ -1,0 +1,30 @@
+<div class="container mt-5">
+  <h1 class="text-white">Login</h1>
+  <hr />
+
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="email" class="form-label text-white">Indirizzo Email</label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        formControlName="email"
+        placeholder="Inserisci email"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label text-white">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="password"
+        formControlName="password"
+        placeholder="Inserisci Password"
+      />
+    </div>
+    <button type="submit" class="btn btn-primary my-3 confirmBtn" [disabled]="!loginForm.valid">
+      Invia
+    </button>
+  </form>
+</div>

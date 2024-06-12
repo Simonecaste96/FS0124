@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="card my-2" *ngFor="let user of users">
+    <div class="card-body">
+      <ng-container *ngFor="let todo of todos">
+        <span class="d-flex m-3" *ngIf="user.id === todo.userId" [ngStyle]="{'background-color': (todo.completed === true) ? 'green' : 'red'}"><input [checked]="todo.completed" (change)="toggleCompleted(todo)" type="checkbox" class="mx-1" />{{ todo.todo }}</span>
+      </ng-container>
+    </div>
+    <p class="card-text text-start mx-3">Creata da: {{ user.firstName }} {{ user.lastName }}</p>
+  </div>
+</div>
+

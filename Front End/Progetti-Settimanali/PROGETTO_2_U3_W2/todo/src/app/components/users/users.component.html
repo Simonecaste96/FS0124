@@ -1,0 +1,37 @@
+<!-- <div class="container">
+    <div class="card mb-3" style="max-width: 540px;" *ngFor="let todo of todos">
+        <div class="row g-0 d-flex" *ngFor="let user of users">
+          <div class="" >
+            <img src="{{user.image}}" class="img-fluid rounded-start" alt="{{user.firstName+user.lastName}}">
+          </div>
+          <div class="">
+            <div class="card-body">
+              <h5 class="card-title">{{user.firstName}} {{user.lastName}}</h5>
+              <p class="card-text">{{user.title}}</p>
+              <p class="card-text" *ngIf="todo.userId===user.id">{{todo.todo}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div> -->
+  <div class="container py-2 text-center">
+    <div class="card mb-3" style="max-width: 540px;" *ngFor="let user of users">
+      <div class="row g-0 d-flex">
+        <div>
+          <img src="{{ user.image }}" class="img-fluid rounded-start" alt="{{ user.firstName + ' ' + user.lastName }}">
+          <div class="card-body">
+            <h5 class="card-title">{{ user.firstName + ' ' + user.lastName }}</h5>
+            <p class="card-text">{{ user.title }}</p>
+            <p class="card-text">
+              <ng-container *ngFor="let todo of todos">
+                <span class="d-flex m-3" *ngIf="user.id === todo.userId" [ngStyle]="{'background-color': (todo.completed === true) ? 'green' : 'red'}"><input [checked]="todo.completed" (change)="toggleCompleted(todo)" type="checkbox" class="mx-1">{{ todo.todo }}</span>
+              </ng-container>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  

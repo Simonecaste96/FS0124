@@ -1,0 +1,50 @@
+<!-- <div class="container my-3">
+  <ng-container>
+    <div class="row">
+      <div class="col-12 text-center" >
+        <p *ngIf="favorites.length==0" >Aggiungi un film tra i preferiti per vederlo qui!</p>
+      </div>
+      <div class="col-6 col-md-6 col-xl-4 my-3" *ngFor="let film of films, let i=index">
+        <div class="card" *ngIf="favorites.forEach(film.id)==idfilmFavoritesUser" id="{{film.id}}">
+          <img src="https://image.tmdb.org/t/p/w500/{{film.poster_path}}" class="card-img-top" alt="{{film.title}}" />
+          <div class="card-body">
+            <h5 class="card-title">{{film.title}}</h5>
+            <p class="card-text">
+             
+            </p>
+            <a class="btn btn-danger" (click)="delFav(film.id)"><i class="bi bi-heartbreak"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div> -->
+
+<div class="container my-3">
+  <ng-container #Films *ngIf="favorites.length > 0; else noFavorites">
+    <div class="row">
+      <div class="col-6 col-md-6 col-xl-4 my-3" *ngFor="let film of films; let i = index">
+        <div class="card">
+          <img src="https://image.tmdb.org/t/p/w500/{{ film.poster_path }}" class="card-img-top" alt="{{ film.title }}" />
+          <div class="card-body">
+            <h5 class="card-title">{{ film.title }}</h5>
+            <div>
+              <a class="btn btn-danger" (click)="delFav(favorites[i].id)">
+                <i class="bi bi-heartbreak"></i> Rimuovi dai preferiti
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+  <ng-template #noFavorites>
+    <p class="text-center">
+      Nessun film presente nei preferiti, aggiungilo con il cuore per vederlo qui!
+    </p>
+  </ng-template>
+</div>
+
+
+
+
